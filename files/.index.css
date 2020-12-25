@@ -1,0 +1,77 @@
+html,
+body {
+  margin: 0px !important;
+  padding: 0px !important;
+  height: 100%;
+}
+
+body {
+  background: #051107;
+  height: 100%;
+}
+
+.files {
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(5, 17, 7, 0.7) !important;
+  text-align: center;
+  line-height: 2em;
+  font-family: monospace;
+  font-size: 14pt;
+}
+
+a {
+  text-decoration: none;
+  padding: .7em;
+}
+
+.parent-folder:link,
+.parent-folder:visited {
+  color: #4d66ab;
+}
+
+.zip-link:link,
+.zip-link:visited {
+  font-weight: bold;
+  color: #9b5763;
+  transition: 0.2s ease;
+}
+
+.zip-link:hover {
+  color: #ab8e93;
+}
+
+.dir-link,
+.file-link {
+  transition: 0.3s ease;
+  border-bottom: none;
+}
+
+.dir-link:hover,
+.file-link:hover {
+  border-bottom: .1em solid;
+}
+
+.dir-link:link {
+  color: #8a97dc;
+}
+
+.dir-link:visited {
+  color: #ba97dc;
+}
+
+.dir-link:hover {
+  color: #6877ba;
+}
+
+.file-link:link,
+.file-link:visited {
+  color: #77bcc8;
+}
+
+.file-link:hover {
+  color: #9a7ea7;
+}
