@@ -21,6 +21,7 @@ body {
   line-height: 2em;
   font-family: monospace;
   font-size: 14pt;
+  overflow-y: auto;
 }
 
 a {
