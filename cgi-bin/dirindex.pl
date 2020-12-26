@@ -30,7 +30,7 @@ while (my $f = readdir DIR) {
   push @unsorted_files, $f
 }
 closedir DIR;
-my @files = sort @unsorted_files; # sort flenames
+my @files = sort @unsorted_files; # sort filenames
 
 print HTTP_HEADER;
 print HTML_HEADER;
