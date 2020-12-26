@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+use strict;
 
 use URI::Escape;
 
@@ -23,12 +24,13 @@ EOF
 my $dir = uri_unescape("$ENV{'REQUEST_URI'}");
 my $fileroot = uri_unescape("$ENV{'CONTEXT_DOCUMENT_ROOT'}");
 
-my @files;
+my @_files;
 opendir (DIR, $fileroot . $dir) or die "couldn't open directory $!";
 while ($f = readdir DIR) {
-  push @files, $f
+  push @_files, $f
 }
 closedir DIR;
+my @files = sort @_files; # sort flenames
 
 print HTTP_HEADER;
 print HTML_HEADER;
