@@ -11,6 +11,7 @@ use constant HTML_HEADER => <<"EOF";
     <meta charset="utf-8">
     <title>index of $ENV{'REQUEST_URI'}</title>
     <link rel="stylesheet" href="/.index.css">
+    <meta name="viewport" content="user-scalable=no">
   </head>
   <body>
     <div class="files">

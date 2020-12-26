@@ -76,3 +76,9 @@ a {
 .file-link:hover {
   color: #9a7ea7;
 }
+
+@media screen and (max-width: 1000px) {
+  .files {
+    font-size: 18pt;
+  }
+}
