@@ -10,7 +10,7 @@ use constant HTML_HEADER => <<"EOF";
   <head>
     <meta charset="utf-8">
     <title>index of $ENV{'REQUEST_URI'}</title>
-    <link rel="stylesheet" href="/.index.css">
+    <link rel="stylesheet" href="/.css/index.css">
     <meta name="viewport" content="user-scalable=no">
   </head>
   <body>
