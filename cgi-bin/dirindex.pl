@@ -4,12 +4,13 @@ use strict;
 use URI::Escape;
 
 use constant HTTP_HEADER => "Content-type: text/html\n\n";
-use constant HTML_HEADER => <<"EOF";
+use constant HTML_HEADER_TOP => <<"EOF";
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>index of $ENV{'REQUEST_URI'}</title>
+EOF
+use constant HTML_HEADER_BOTTOM => <<"EOF";
     <link rel="stylesheet" href="/.css/index.css">
     <meta name="viewport" content="user-scalable=no">
   </head>
@@ -24,6 +25,8 @@ EOF
 
 my $dir = uri_unescape("$ENV{'REQUEST_URI'}");
 my $fileroot = uri_unescape("$ENV{'CONTEXT_DOCUMENT_ROOT'}");
+my $title = "<title>index of $dir</title>\n";
+my $html_header = HTML_HEADER_TOP . $title . HTML_HEADER_BOTTOM;
 
 my @unsorted_files;
 opendir (DIR, $fileroot . $dir) or die "couldn't open directory $!";
@@ -34,7 +37,7 @@ closedir DIR;
 my @files = sort @unsorted_files; # sort filenames
 
 print HTTP_HEADER;
-print HTML_HEADER;
+print $html_header;
 print '<p><a href=".." class="parent-folder">^ parent folder</a><p>';
 print '<p><a href="as-zip" class="zip-link">download folder as zip</a></p>';
 foreach (@files) {
