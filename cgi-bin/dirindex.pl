@@ -38,7 +38,7 @@ my @files = sort @unsorted_files; # sort filenames
 
 print HTTP_HEADER;
 print $html_header;
-print '<p><a href=".." class="parent-folder">^ parent folder</a><p>';
+print '<p><a href=".." class="parent-folder">^ parent folder</a></p>';
 print '<p><a href="as-zip" class="zip-link">download folder as zip</a></p>';
 foreach (@files) {
   my $f = $fileroot . $dir . $_;
